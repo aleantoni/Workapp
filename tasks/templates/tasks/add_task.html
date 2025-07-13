@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mis tareas</title>
+    <link rel="stylesheet" href="{% static 'tasks/tareas.css' %}">
+    
+</head>
+<body>
+
+<h2>Agregar Tarea</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Guardar</button>
+</form>
+
+</body>
+</html>

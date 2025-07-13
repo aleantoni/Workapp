@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mis tareas</title>
+    <link rel="stylesheet" href="{% static 'tasks/style.css' %}">
+    
+</head>
+<body>
+
+<h1>Tareas</h1>
+<a href="{% url 'add_task' %}">Agregar nueva tarea</a>
+<ul>
+  {% for task in tasks %}
+   
+
+
+<div class="task-card" data-task-id="{{ task.id }}">
+    <h3>{{ task.title }}</h3>
+    <p>{{ task.description }}</p>
+    <p><strong>Estado:</strong> <span class="task-status">{{ task.get_status_display }}</span></p>
+
+    <button class="toggle-status button">
+        {% if task.status == 'P' %} Marcar como Completada {% else %} Marcar como Pendiente {% endif %}
+    </button>
+
+    <a href="{% url 'edit_task' task.id %}" class="button">Editar</a>
+
+    <form action="{% url 'delete_task' task.id %}" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="button">Eliminar</button>
+    </form>
+</div>
+
+
+  {% endfor %}
+</ul>
+<form action="{% url 'logout' %}" method="post" style="display:inline;">
+  {% csrf_token %}
+  <button type="submit">Cerrar sesión</button>
+</form>
+<script src="{% static 'tasks/script.js' %}"></script>
+
+</body>
+</html>

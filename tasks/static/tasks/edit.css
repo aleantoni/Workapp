@@ -1,0 +1,339 @@
+/* CSS limpio y moderno para tu app de tareas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: white;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Título principal */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: #6c5ce7; /* Fallback */
+}
+
+/* Estilos para enlaces y botones */
+a, button {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 10px 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Enlace "Agregar nueva tarea" */
+a[href*="add_task"] {
+    background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+    color: white;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+    display: block;
+    text-align: center;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+a[href*="add_task"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.6);
+}
+
+/* Lista de tareas */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+}
+
+/* Tarjetas de tareas */
+.task-card {
+    background: #faf9f6;
+    margin-bottom: 20px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid #6c5ce7;
+    position: relative;
+}
+
+.task-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Título de la tarea */
+.task-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 12px;
+}
+
+/* Descripción y estado */
+.task-card p {
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.task-card p strong {
+    color: #2c3e50;
+}
+
+/* Estado de las tareas */
+.task-status {
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Botones de acción */
+.task-card .button {
+    font-size: 12px;
+    padding: 8px 16px;
+    margin: 5px 3px 0 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Botón toggle status */
+.toggle-status {
+    background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+    color: white;
+    box-shadow: 0 2px 8px rgba(108, 92, 231, 0.3);
+}
+
+.toggle-status:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.5);
+}
+
+/* Botón editar */
+a[href*="edit_task"] {
+    background: linear-gradient(45deg, #00b894, #00cec9);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 184, 148, 0.3);
+}
+
+a[href*="edit_task"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 184, 148, 0.5);
+}
+
+/* Botón eliminar */
+.task-card button[type="submit"] {
+    background: linear-gradient(45deg, #e17055, #fd79a8);
+    color: white;
+    box-shadow: 0 2px 8px rgba(225, 112, 85, 0.3);
+}
+
+.task-card button[type="submit"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(225, 112, 85, 0.5);
+}
+
+/* Formulario de logout */
+form[action*="logout"] {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+form[action*="logout"] button[type="submit"] {
+    background: linear-gradient(45deg, #fd79a8, #e84393);
+    color: white;
+    box-shadow: 0 4px 15px rgba(253, 121, 168, 0.4);
+    padding: 12px 24px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+form[action*="logout"] button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(253, 121, 168, 0.6);
+}
+
+/* Formularios inline */
+form[style*="inline"] {
+    display: inline;
+    margin: 0;
+}
+
+/* Estilos para páginas de formularios (editar, agregar) */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Título h2 para formularios */
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: #6c5ce7; /* Fallback */
+}
+
+/* Estilos para formularios */
+form {
+    background: #faf9f6;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para campos del formulario */
+form p {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+    outline: none;
+    border-color: #6c5ce7;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Botón de envío del formulario */
+form button[type="submit"] {
+    background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+    color: white;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 20px auto 0;
+}
+
+form button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.6);
+}
+
+/* Botón cancelar */
+a.button {
+    display: block;
+    text-align: center;
+    max-width: 200px;
+    margin: 0 auto;
+    background: linear-gradient(45deg, #e17055, #fd79a8);
+    color: white;
+    box-shadow: 0 4px 15px rgba(225, 112, 85, 0.4);
+}
+
+a.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(225, 112, 85, 0.6);
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    .container {
+        padding: 25px;
+        margin: 10px;
+    }
+    
+    h1, h2 {
+        font-size: 1.8rem;
+    }
+    
+    .task-card {
+        padding: 20px;
+    }
+    
+    .task-card .button {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+        text-align: center;
+    }
+    
+    a[href*="add_task"] {
+        max-width: none;
+    }
+    
+    form {
+        padding: 20px;
+    }
+    
+    a.button {
+        max-width: none;
+    }
+}

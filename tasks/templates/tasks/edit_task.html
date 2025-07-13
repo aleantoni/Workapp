@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar tarea</title>
+    <link rel="stylesheet" href="{% static 'tasks/edit.css' %}">
+</head>
+<body>
+<div class="container">
+    <h2>Editar tarea</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar cambios</button>
+    </form>
+    <a href="{% url 'index' %}" class="button">Cancelar</a>
+</div>
+</body>
+</html>

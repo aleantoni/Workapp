@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mis tareas</title>
+    <link rel="stylesheet" href="{% static 'tasks/logins.css' %}">
+</head>
+<body>
+
+<div class="login-wrapper">
+<h2>Iniciar Sesión</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Entrar</button>
+</form>
+<p>¿No tienes cuenta? <a href="{% url 'register' %}">Regístrate aquí</a></p>
+
+</div>
+
+</body>
+</html>
